@@ -1,17 +1,22 @@
-with open('input.txt') as inputfile:
+"""
+This checks for increases in depth readings
+Classes: None
+Functions: None
+"""
+with open('input.txt', encoding='UTF-8') as inputfile:
     data = [int(datalen) for datalen in inputfile.readlines()]
 
-increase = 0
+INCREASE = 0
 for firstval, nextval in zip(data, data[1:]):
     if nextval > firstval:
-        increase += 1
-print(increase)
+        INCREASE += 1
+print(INCREASE)
 
-slideinc = 0
+SLIDEINC = 0
 slidelist = []
 for firstval, secval, thirdval in zip(data, data[1:], data[2:]):
     slidelist.append(firstval + secval + thirdval)
 for firstslide, nextslide in zip(slidelist, slidelist[1:]):
     if nextslide > firstslide:
-        slideinc += 1
-print(slideinc)
+        SLIDEINC += 1
+print(SLIDEINC)
