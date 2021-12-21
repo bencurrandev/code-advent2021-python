@@ -61,4 +61,3 @@ for num in NUMBERS:
                         if not FOUND[board][row][column]:
                             UNMARKED += int(BOARDS[board][row][column])
                 print(UNMARKED * num)
-
